@@ -17,249 +17,66 @@
     --border: #333333;
   }
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    font-family: 'Cairo', sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    line-height: 1.6;
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Cairo', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
 
   header {
     background-color: rgba(18, 18, 18, 0.95);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position: sticky; top: 0; z-index: 1000;
     border-bottom: 1px solid var(--border);
-    padding: 15px 20px;
-    text-align: center;
+    padding: 15px 20px; text-align: center;
   }
+  header h1 { font-size: 1.6rem; letter-spacing: 2px; color: var(--primary); }
 
-  header h1 {
-    font-size: 1.6rem;
-    letter-spacing: 2px;
-    color: var(--primary);
-  }
+  .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
 
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  /* Hero Section */
   .hero {
-    text-align: center;
-    padding: 40px 10px;
-    background: linear-gradient(180deg, rgba(201,162,75,0.08) 0%, rgba(18,18,18,0) 100%);
-    border-radius: 12px;
-    margin-bottom: 30px;
+    text-align: center; padding: 30px 10px;
+    background: linear-gradient(180deg, rgba(201,162,75,0.1) 0%, rgba(18,18,18,0) 100%);
+    border-radius: 12px; margin-bottom: 25px;
   }
+  .hero h2 { font-size: 1.8rem; margin-bottom: 10px; }
+  .hero p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px; }
 
-  .hero h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
+  .badge-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .badge { background: #282828; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--border); color: var(--primary); }
 
-  .hero p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    max-width: 600px;
-    margin: 0 auto 20px;
-  }
+  .section-title { font-size: 1.3rem; color: var(--primary); margin: 30px 0 15px; border-right: 4px solid var(--primary); padding-right: 10px; }
 
-  .badge-bar {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 15px;
-  }
-
-  .badge {
-    background: #282828;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    border: 1px solid var(--border);
-    color: var(--primary);
-  }
-
-  /* Section Title */
-  .section-title {
-    font-size: 1.4rem;
-    color: var(--primary);
-    margin: 30px 0 15px;
-    border-right: 4px solid var(--primary);
-    padding-right: 10px;
-  }
-
-  /* Products Grid */
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-  }
-
-  .product-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s, border-color 0.2s;
-  }
-
-  .product-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--primary);
-  }
-
-  .product-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    background-color: #2a2a2a;
-  }
-
-  .product-info {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-
-  .product-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-
-  .product-desc {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-    flex-grow: 1;
-  }
-
-  .product-price {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 10px;
-  }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+  .product-card { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+  .product-info { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
+  .product-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+  .product-desc { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px; flex-grow: 1; }
+  .product-price { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
 
   .btn-select {
-    width: 100%;
-    background-color: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    padding: 8px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
+    width: 100%; background-color: transparent; border: 1px solid var(--primary);
+    color: var(--primary); padding: 8px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s;
   }
+  .btn-select:hover { background-color: var(--primary); color: #000; }
 
-  .btn-select:hover {
-    background-color: var(--primary);
-    color: #000;
-  }
-
-  /* Special Offer Card */
   .offer-box {
     background: linear-gradient(135deg, #2a2212 0%, #1e1e1e 100%);
-    border: 2px solid var(--primary);
-    border-radius: 12px;
-    padding: 25px;
-    margin: 30px 0;
-    text-align: center;
+    border: 2px solid var(--primary); border-radius: 12px; padding: 20px; margin: 25px 0; text-align: center;
   }
+  .offer-box h3 { color: var(--primary); font-size: 1.4rem; }
+  .offer-price { font-size: 1.6rem; font-weight: 800; margin: 8px 0; }
+  .offer-price span { text-decoration: line-through; color: var(--text-muted); font-size: 1rem; margin-left: 8px; }
 
-  .offer-box h3 {
-    color: var(--primary);
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-  }
-
-  .offer-price {
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin: 10px 0;
-  }
-
-  .offer-price span {
-    text-decoration: line-through;
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-left: 8px;
-  }
-
-  /* Checkout Form */
-  .checkout-section {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 25px;
-    margin-top: 40px;
-  }
-
-  .form-group {
-    margin-bottom: 15px;
-  }
-
-  .form-group label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 0.9rem;
-  }
-
-  .form-control {
-    width: 100%;
-    padding: 12px;
-    background-color: #2a2a2a;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: #fff;
-    font-family: inherit;
-  }
-
-  .form-control:focus {
-    outline: none;
-    border-color: var(--primary);
-  }
+  .checkout-section { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 30px; }
+  .form-group { margin-bottom: 12px; }
+  .form-group label { display: block; margin-bottom: 5px; font-size: 0.88rem; }
+  .form-control { width: 100%; padding: 10px; background-color: #2a2a2a; border: 1px solid var(--border); border-radius: 6px; color: #fff; font-family: inherit; }
+  .form-control:focus { outline: none; border-color: var(--primary); }
 
   .btn-submit {
-    width: 100%;
-    background-color: var(--primary);
-    color: #000;
-    border: none;
-    padding: 14px;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 10px;
+    width: 100%; background-color: var(--primary); color: #000; border: none; padding: 12px;
+    border-radius: 6px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 10px;
   }
+  .btn-submit:hover { background-color: var(--primary-hover); }
 
-  .btn-submit:hover {
-    background-color: var(--primary-hover);
-  }
-
-  footer {
-    text-align: center;
-    padding: 25px;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    border-top: 1px solid var(--border);
-    margin-top: 40px;
-  }
+  footer { text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 30px; }
 </style>
 </head>
 <body>
@@ -270,31 +87,28 @@
 
 <div class="container">
 
-  <!-- Hero Section -->
   <div class="hero">
     <h2>عطور فاخرة بلمسة مغربية راقية</h2>
-    <p>تشكيلة مختارة لأرقى العطور العالمية بثبات عالي وجودة ممتازة</p>
+    <p>تشكيلة مستوحاة من أرقى العطور العالمية بثبات عالي يدوم طويلاً</p>
     <div class="badge-bar">
-      <span class="badge">🚚 التوصيل مجاني لجميع المدن</span>
+      <span class="badge">🚚 التوصيل مجاني</span>
       <span class="badge">💵 الدفع عند الاستلام</span>
-      <span class="badge">✨ ثبات تدوم طويلاً</span>
+      <span class="badge">✨ ثبات ممتاز</span>
     </div>
   </div>
 
-  <!-- Offer Section -->
+  <!-- Special Offer -->
   <div class="offer-box">
     <h3>🔥 عرض خاص: باك الثنائي (Duo)</h3>
     <p>اختر أي عطرين بـ 339 درهم فقط بدلاً من <span>378 درهم</span></p>
     <div class="offer-price">339 د.م.</div>
-    <button class="btn-select" style="max-width: 200px; margin: 0 auto; background: var(--primary); color:#000;" onclick="selectOffer('عرض الثنائي Duo')">اطلب العرض الآن</button>
+    <button class="btn-select" style="max-width: 200px; margin: 0 auto; background: var(--primary); color:#000;" onclick="selectProduct('عرض الثنائي Duo')">اطلب العرض الآن</button>
   </div>
 
-  <!-- Women Collection -->
+  <!-- Women Collection (5 Fragrances) -->
   <div class="section-title">المجموعة النسائية (189 د.م.)</div>
   <div class="products-grid">
-    
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=400&q=80" class="product-img" alt="Libre">
       <div class="product-info">
         <div class="product-title">Libre</div>
         <div class="product-desc">خزامى وزهر البرتقال مع لمسة الفانيليا.</div>
@@ -304,7 +118,6 @@
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=400&q=80" class="product-img" alt="Black Opium">
       <div class="product-info">
         <div class="product-title">Black Opium</div>
         <div class="product-desc">قهوة سوداء وفانيليا مع أزهار بيضاء.</div>
@@ -314,7 +127,6 @@
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=400&q=80" class="product-img" alt="La Vie Est Belle">
       <div class="product-info">
         <div class="product-title">La Vie Est Belle</div>
         <div class="product-desc">فانيليا وياسمين مع لمسات سوسن سحرية.</div>
@@ -324,33 +136,37 @@
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=400&q=80" class="product-img" alt="J'adore">
       <div class="product-info">
-        <div class="product-title">J'adore</div>
+        <div class="product-title">Jadore</div>
         <div class="product-desc">ورد وياسمين مع لمسات الإيلنغ الملكية.</div>
         <div class="product-price">189 د.م.</div>
-        <button class="btn-select" onclick="selectProduct('J\'adore - نسائي')">اختيار العطر</button>
+        <button class="btn-select" onclick="selectProduct('Jadore - نسائي')">اختيار العطر</button>
       </div>
     </div>
 
+    <div class="product-card">
+      <div class="product-info">
+        <div class="product-title">Coco Mademoiselle</div>
+        <div class="product-desc">برتقال مع ورد شرقي وباتشولي ساحر.</div>
+        <div class="product-price">189 د.م.</div>
+        <button class="btn-select" onclick="selectProduct('Coco Mademoiselle - نسائي')">اختيار العطر</button>
+      </div>
+    </div>
   </div>
 
-  <!-- Men Collection -->
+  <!-- Men Collection (5 Fragrances) -->
   <div class="section-title">المجموعة الرجالية (189 د.م.)</div>
   <div class="products-grid">
-    
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=400&q=80" class="product-img" alt="Sauvage">
       <div class="product-info">
         <div class="product-title">Sauvage</div>
-        <div class="product-desc">برغموت وعنبر برائحة جَذّابة وقوية.</div>
+        <div class="product-desc">برغموت وعنبر برائحة جذابة وقوية.</div>
         <div class="product-price">189 د.م.</div>
         <button class="btn-select" onclick="selectProduct('Sauvage - رجالي')">اختيار العطر</button>
       </div>
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=400&q=80" class="product-img" alt="Bleu de Chanel">
       <div class="product-info">
         <div class="product-title">Bleu de Chanel</div>
         <div class="product-desc">حمضيات مع أخشاب الصندل الدافئة.</div>
@@ -360,7 +176,6 @@
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=400&q=80" class="product-img" alt="Creed Aventus">
       <div class="product-info">
         <div class="product-title">Creed Aventus</div>
         <div class="product-desc">أناناس وأخشاب فاخرة لمظهر كلاسيكي.</div>
@@ -370,54 +185,67 @@
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1583445013765-46c20c4a6772?auto=format&fit=crop&w=400&q=80" class="product-img" alt="Acqua Di Giò">
       <div class="product-info">
-        <div class="product-title">Acqua Di Giò</div>
+        <div class="product-title">Acqua Di Gio</div>
         <div class="product-desc">انتعاش البحر والأخشاب الخفيفة.</div>
         <div class="product-price">189 د.م.</div>
-        <button class="btn-select" onclick="selectProduct('Acqua Di Giò - رجالي')">اختيار العطر</button>
+        <button class="btn-select" onclick="selectProduct('Acqua Di Gio - رجالي')">اختيار العطر</button>
       </div>
     </div>
 
+    <div class="product-card">
+      <div class="product-info">
+        <div class="product-title">Terre d'Hermes</div>
+        <div class="product-desc">حمضيات وأخشاب دافئة مع لمسة معدنية راقية.</div>
+        <div class="product-price">189 د.م.</div>
+        <button class="btn-select" onclick="selectProduct('Terre Hermes - رجالي')">اختيار العطر</button>
+      </div>
+    </div>
   </div>
 
   <!-- Order Form -->
   <div class="checkout-section" id="order-form">
-    <h2 style="text-align: center; color: var(--primary); margin-bottom: 20px;">استمارة الطلب المباشر</h2>
+    <h2 style="text-align: center; color: var(--primary); margin-bottom: 15px;">استمارة الطلب المباشر</h2>
     
-    <form onsubmit="event.preventDefault(); alert('شكراً لطلبك! سنتصل بك في أقرب وقت لتأكيد الطلب والتوصيل.');">
+    <form id="whatsappForm">
       <div class="form-group">
         <label>الاسم الكامل</label>
-        <input type="text" class="form-control" placeholder="أدخل اسمك الكامل" required>
+        <input type="text" id="cust_name" class="form-control" placeholder="أدخل اسمك الكامل" required>
       </div>
 
       <div class="form-group">
         <label>رقم الهاتف</label>
-        <input type="tel" class="form-control" placeholder="0625515314"required>
+        <input type="tel" id="cust_phone" class="form-control" placeholder="0625515314" required>
       </div>
 
       <div class="form-group">
-        <label>المدينة</label>
-        <input type="text" class="form-control" placeholder="أدخل مدينتك" required>
+        <label>المدينة والعنوان</label>
+        <input type="text" id="cust_city" class="form-control" placeholder="أدخل مدينتك وعنوانك" required>
       </div>
 
       <div class="form-group">
         <label>العطر أو العرض المختار</label>
         <select class="form-control" id="product-select" required>
           <option value="" disabled selected>-- اختر العطر من القائمة --</option>
-          <option value="عرض الثنائي Duo">🔥 عرض الثنائي Duo - 339 د.م.</option>
-          <option value="Libre - نسائي">Libre (نسائي) - 189 د.م.</option>
-          <option value="Black Opium - نسائي">Black Opium (نسائي) - 189 د.م.</option>
-          <option value="La Vie Est Belle - نسائي">La Vie Est Belle (نسائي) - 189 د.م.</option>
-          <option value="J'adore - نسائي">J'adore (نسائي) - 189 د.م.</option>
-          <option value="Sauvage - رجالي">Sauvage (رجالي) - 189 د.م.</option>
-          <option value="Bleu de Chanel - رجالي">Bleu de Chanel (رجالي) - 189 د.م.</option>
-          <option value="Creed Aventus - رجالي">Creed Aventus (رجالي) - 189 د.م.</option>
-          <option value="Acqua Di Giò - رجالي">Acqua Di Giò (رجالي) - 189 د.م.</option>
+          <option value="عرض الثنائي Duo (339 د.م.)">🔥 عرض الثنائي Duo - 339 د.م.</option>
+          
+          <!-- النسائية -->
+          <option value="Libre - نسائي (189 د.م.)">Libre (نسائي) - 189 د.م.</option>
+          <option value="Black Opium - نسائي (189 د.م.)">Black Opium (نسائي) - 189 د.م.</option>
+          <option value="La Vie Est Belle - نسائي (189 د.م.)">La Vie Est Belle (نسائي) - 189 د.م.</option>
+          <option value="Jadore - نسائي (189 د.م.)">Jadore (نسائي) - 189 د.م.</option>
+          <option value="Coco Mademoiselle - نسائي (189 د.م.)">Coco Mademoiselle (نسائي) - 189 د.م.</option>
+
+          <!-- الرجالية -->
+          <option value="Sauvage - رجالي (189 د.م.)">Sauvage (رجالي) - 189 د.م.</option>
+          <option value="Bleu de Chanel - رجالي (189 د.م.)">Bleu de Chanel (رجالي) - 189 د.م.</option>
+          <option value="Creed Aventus - رجالي (189 د.م.)">Creed Aventus (رجالي) - 189 د.م.</option>
+          <option value="Acqua Di Gio - رجالي (189 د.م.)">Acqua Di Gio (رجالي) - 189 د.م.</option>
+          <option value="Terre Hermes - رجالي (189 د.م.)">Terre d'Hermes (رجالي) - 189 د.م.</option>
         </select>
       </div>
 
-      <button type="submit" class="btn-submit">تأكيد الطلب الان (الدفع عند الاستلام)</button>
+      <button type="submit" class="btn-submit">تأكيد الطلب عبر WhatsApp</button>
     </form>
   </div>
 
@@ -430,15 +258,33 @@
 <script>
   function selectProduct(name) {
     const select = document.getElementById('product-select');
-    select.value = name;
+    for (let i = 0; i < select.options.length; i++) {
+      if (select.options[i].value.includes(name)) {
+        select.selectedIndex = i;
+        break;
+      }
+    }
     document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
   }
 
-  function selectOffer(name) {
-    const select = document.getElementById('product-select');
-    select.value = name;
-    document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
-  }
+  document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const myPhone = "212625515314"; 
+
+    const name = document.getElementById('cust_name').value;
+    const phone = document.getElementById('cust_phone').value;
+    const city = document.getElementById('cust_city').value;
+    const product = document.getElementById('product-select').value;
+
+    const message = `السلام عليكم، أريد تأكيد طلب جديد:%0A` +
+                    `👤 *الاسم:* ${encodeURIComponent(name)}%0A` +
+                    `📞 *الهاتف:* ${encodeURIComponent(phone)}%0A` +
+                    `📍 *المدينة:* ${encodeURIComponent(city)}%0A` +
+                    `🛍️ *الطلب:* ${encodeURIComponent(product)}`;
+
+    window.open(`https://wa.me/${myPhone}?text=${message}`, '_blank');
+  });
 </script>
 
 </body>
